@@ -17,6 +17,10 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.postgresql/postgresql
 	runtimeOnly 'org.postgresql:postgresql'
 
+	// https://mapstruct.org/documentation/installation/
+	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+
 	// https://mvnrepository.com/artifact/org.springframework.boot
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'

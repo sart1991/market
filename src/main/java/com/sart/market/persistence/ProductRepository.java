@@ -2,7 +2,7 @@ package com.sart.market.persistence;
 
 
 import com.sart.market.persistence.crud.ProductCrud;
-import com.sart.market.persistence.entity.Product;
+import com.sart.market.persistence.entity.ProductEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,24 +15,24 @@ public class ProductRepository {
 
     private ProductCrud crud;
 
-    public Optional<Product> selectById(Long id) {
+    public Optional<ProductEntity> selectById(Long id) {
         return crud.findById(id);
     }
 
-    public List<Product> selectAll() {
+    public List<ProductEntity> selectAll() {
         return StreamSupport.stream(crud.findAll().spliterator(), false)
                             .collect(Collectors.toList());
     }
 
-    public List<Product> selectByCategory(Long categoryId) {
+    public List<ProductEntity> selectByCategory(Long categoryId) {
         return crud.findByCategoryId(categoryId);
     }
 
-    public Optional<List<Product>> selectByStockLessThan(int stock) {
+    public Optional<List<ProductEntity>> selectByStockLessThan(int stock) {
         return crud.findByStockLessThanAndState(stock, true);
     }
 
-    public Product insert(Product product) {
+    public ProductEntity insert(ProductEntity product) {
         return crud.save(product);
     }
 

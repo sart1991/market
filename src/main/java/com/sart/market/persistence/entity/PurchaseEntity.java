@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "purchases")
-public class Purchase {
+public class PurchaseEntity {
 
     @Id
     @Column(name = "id_purchase")
@@ -29,10 +29,10 @@ public class Purchase {
 
     @ManyToOne
     @JoinColumn(name = "client_id", insertable = false, updatable = false)
-    private Client client;
+    private ClientEntity client;
 
     @OneToMany(mappedBy = "product")
-    private List<ProductsPurchase> products;
+    private List<ProductsPurchaseEntity> products;
 
     public Long getId() {
         return id;
@@ -82,7 +82,7 @@ public class Purchase {
         this.state = state;
     }
 
-    public Client getClient() {
+    public ClientEntity getClient() {
         return client;
     }
 
