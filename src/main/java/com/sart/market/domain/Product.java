@@ -14,7 +14,7 @@ public class Product {
 
     private int stock;
 
-    private boolean isActive;
+    private boolean active;
 
     private Category category;
 
@@ -59,11 +59,11 @@ public class Product {
     }
 
     public boolean isActive() {
-        return isActive;
+        return active;
     }
 
     public void setActive(boolean active) {
-        isActive = active;
+        this.active = active;
     }
 
     public Category getCategory() {

@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface ProductCrud extends CrudRepository<ProductEntity, Long> {
 
     @Query(value = "SELECT * FROM products p WHERE category_id = ?", nativeQuery = true)
-    List<ProductEntity> findByCategoryId(Long categoryId);
+    Optional<List<ProductEntity>> findByCategoryId(Long categoryId);
 
     Optional<List<ProductEntity>> findByStockLessThanAndState(int stock, boolean state);
 

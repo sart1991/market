@@ -4,7 +4,7 @@ public class Category {
 
     private long id;
     private String category;
-    private boolean isActive;
+    private boolean active;
 
     public long getId() {
         return id;
@@ -23,10 +23,10 @@ public class Category {
     }
 
     public boolean isActive() {
-        return isActive;
+        return active;
     }
 
     public void setActive(boolean active) {
-        isActive = active;
+        this.active = active;
     }
 }
