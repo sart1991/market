@@ -1,0 +1,27 @@
+### GET product by id
+GET http://localhost:4040/api/products/51
+
+### GET all products
+GET http://localhost:4040/api/products/all
+
+### GET all products
+GET http://localhost:4040/api/products/category/1
+
+### GET all products with stock less than
+GET http://localhost:4040/api/products?maxStock=100
+
+### POST create or update object
+POST http://localhost:4040/api/products
+content-type: application/json
+
+{
+  "id": 51,
+  "productName": "Té de café",
+  "categoryId": 2,
+  "price": 10000.00,
+  "stock": 5,
+  "active": true
+}
+
+### DELETE product by id
+DELETE http://localhost:4040/api/products/52
