@@ -8,7 +8,8 @@ content-type: application/json
 }
 
 ### GET product by id
-GET http://localhost:4040/api/products/51
+GET http://localhost:4040/api/products/50
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYxODU0MTU0MiwiZXhwIjoxNjE4NTQ1MTQyfQ.V50Qb6fLEugkKJI8-HLUDieBFpQRI9inPlY587m1u5s
 
 ### GET all products
 GET http://localhost:4040/api/products/all
