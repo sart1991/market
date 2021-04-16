@@ -31,7 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/**/auth/**").and()
                 .ignoring().antMatchers("/**/swagger-ui/**").and()
-        .ignoring().antMatchers("/**/swagger-ui.html");
+        .ignoring().antMatchers("/**/swagger-ui.html").and()
+        .ignoring().antMatchers("/**/repeatedWords/**/");
     }
 
     @Override
@@ -55,6 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/api/swagger-ui/**").permitAll()
+                .antMatchers("/**/repeatedWords/**/").permitAll()
                 .anyRequest().authenticated();
         http.addFilterBefore(jwtFilterRequest, UsernamePasswordAuthenticationFilter.class);
     }

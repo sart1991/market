@@ -35,3 +35,12 @@ content-type: application/json
 
 ### DELETE product by id
 DELETE http://localhost:4040/api/products/52
+
+### POST count repeated words
+POST http://localhost:4040/api/repeatedWords/count
+content-type: application/json
+
+{
+  "evaluationText": "sasda1sasda2jfvn",
+  "searchCriteria": "sasda"
+}
