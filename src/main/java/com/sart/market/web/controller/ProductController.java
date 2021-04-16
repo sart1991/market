@@ -2,6 +2,9 @@ package com.sart.market.web.controller;
 
 import com.sart.market.domain.Product;
 import com.sart.market.domain.service.ProductService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +21,11 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/{id}")
+    @ApiOperation("Find product by id")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 404, message = "NOT_FOUND"),
+    })
     public ResponseEntity<Product> getProduct(@PathVariable("id") long id) {
         return productService.getProductById(id)
                 .map(p -> new ResponseEntity<>(p, HttpStatus.OK))
